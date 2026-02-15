@@ -1,4 +1,6 @@
 @use "scssLib/var";
+@use "scssLib/header";
+@use "scssLib/main";
 
 * {
   margin: 0;
@@ -6,111 +8,24 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 90px;
+}
+
 body {
   background-color: white;
 }
 
-/** ====== HEADER ====== **/
-header {
-  display: flex;
-  background-color: var.$header_bg;
-  color: var.$header_text;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-
-  h3 {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .hamburger {
-    position: relative;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    cursor: pointer;
-
-
-    span {
-      width: 28px;
-      height: 3px;
-      background-color: white;
-    }
-  }
-
-  nav {
-    background-color: var.$menu_color;
-    position: absolute;
-    padding: 10px;
-    top: 40px;
-    left: 20px;
-    border: 2px solid white;
-    z-index: 99;
-    transition: transform 0.2s ease;
-    transform: translateX(-150%);
-  }
-
-  .menu-toggle:checked ~ nav {
-    transform: translateX(0);
-
-  }
+hr {
+  border: 2px solid var.$line_color;
+  margin: 10px 0;
+  width: 100%;
 }
 
-main {
-  background-color: var.$background_color;
-  margin: auto 10px;
-  padding: 10px;
+.text-center {
+  text-align: center;
+}
 
-  section {
-    display: flex;
-    flex-direction: column;
-    .card_title {
-      background-color: var.$header_bg;
-      text-align: center;
-      padding: 10px;
-      border-radius: 10px;
-      color: white;
-      margin: auto 20px;
-    }
-
-    img {
-      width: 40%;
-      margin-top: 20px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 50%;
-    }
-
-  }
-  .mini_card_name {
-    background-color: white;
-    margin: 10px auto auto auto;
-    padding: 5px 80px;
-    font-size: 1.25rem;
-    border-radius: 5px;
-    width: 70%;
-    font-size: 1.25rem;
-    text-align: center;
-  }
-
-  .mini_card {
-    background-color: white;
-    width: 70%;
-    padding: 5px 10px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.25rem;
-  }
-
-  hr {
-    border: 2px solid var.$line_color;
-    margin: 10px 0;
-  }
+ul {
+  list-style-position: inside;
 }
